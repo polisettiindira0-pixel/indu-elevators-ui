@@ -7,16 +7,17 @@
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: #f5f5f5;
+    margin: 0;
 }
 
-/* A4 CENTER */
+/* ✅ A4 PERFECT SIZE */
 .container {
-    width: 794px; /* A4 width in px */
-    min-height: 1123px;
-    margin: 20px auto;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 10px auto;
     background: #fff;
-    padding: 30px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* HEADER */
@@ -95,16 +96,20 @@ button {
     border: none;
 }
 
-/* 🔥 IMPORTANT FOR PDF */
+/* HIDE IN PDF */
+.no-print {
+    text-align: center;
+}
+
+/* PRINT FIX */
 @media print {
     body {
         background: white;
     }
 
     .container {
-        box-shadow: none;
         margin: 0;
-        width: 100%;
+        box-shadow: none;
     }
 
     .no-print {
@@ -196,14 +201,27 @@ function addRow() {
 }
 
 function downloadPDF() {
+
     const element = document.getElementById("pdfContent");
 
-    html2pdf().set({
+    const opt = {
         margin: 0,
         filename: "Indu_Elevators_Quote.pdf",
-        html2canvas: { scale: 3 },
-        jsPDF: { unit: 'px', format: 'a4' }
-    }).from(element).save();
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: {
+            scale: 2,
+            useCORS: true,
+            scrollX: 0,
+            scrollY: 0
+        },
+        jsPDF: {
+            unit: 'mm',
+            format: 'a4',
+            orientation: 'portrait'
+        }
+    };
+
+    html2pdf().set(opt).from(element).save();
 }
 </script>
 
