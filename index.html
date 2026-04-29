@@ -1,233 +1,232 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Indu Elevators Quote</title>
+<title>Indu Elevators</title>
 
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f5f5f5;
-        }
+<style>
+body {
+    font-family: "Times New Roman", serif;
+    background: #eaeaea;
+}
 
-        .container {
-            width: 700px;
-            margin: 20px auto;
-            background: #fff;
-            padding: 25px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+.container {
+    width: 650px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px 35px;
+}
 
-        /* HEADER */
-        h1 {
-            text-align: center;
-            color: #c40000;
-            font-size: 22px;
-            letter-spacing: 1px;
-            margin-bottom: 2px;
-        }
+/* HEADER */
+h1 {
+    text-align: center;
+    color: #c40000;
+    font-size: 18px;
+    margin: 0;
+    letter-spacing: 1px;
+}
 
-        h3 {
-            text-align: center;
-            font-size: 13px;
-            letter-spacing: 1px;
-            margin-top: 0;
-            margin-bottom: 15px;
-            color: #333;
-        }
+h3 {
+    text-align: center;
+    font-size: 12px;
+    margin: 2px 0 10px 0;
+}
 
-        /* CUSTOMER INFO */
-        .info {
-            font-size: 13px;
-            margin-bottom: 10px;
-        }
+/* CUSTOMER DETAILS */
+.details {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
 
-        .info div {
-            margin-bottom: 5px;
-        }
+.details input {
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 12px;
+    width: 200px;
+    outline: none;
+}
 
-        /* TITLE */
-        .title {
-            text-align: center;
-            font-weight: bold;
-            font-size: 14px;
-            margin: 10px 0;
-        }
+/* PROJECT TITLE */
+.project-title {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
 
-        /* TABLE */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-        }
+.project-title input {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 40px;
+    text-align: center;
+}
 
-        td {
-            border: 1px solid #333;
-            padding: 6px;
-        }
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
 
-        .label {
-            font-weight: bold;
-            background: #f2f2f2;
-            width: 45%;
-        }
+td {
+    border: 1px solid black;
+    padding: 5px;
+}
 
-        /* PRICE */
-        .price {
-            margin-top: 12px;
-            font-size: 14px;
-            font-weight: bold;
-            text-align: center;
-        }
+.label {
+    font-weight: bold;
+    width: 45%;
+}
 
-        .price span {
-            font-size: 18px;
-            color: #000;
-        }
+input.table-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 12px;
+}
 
-        /* SECTIONS */
-        .section {
-            margin-top: 15px;
-            font-size: 12px;
-            line-height: 1.5;
-        }
+/* PRICE */
+.price {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 8px;
+}
 
-        .section b {
-            font-size: 13px;
-        }
+.price input {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 120px;
+    text-align: center;
+    font-weight: bold;
+}
 
-        /* SIGNATURE */
-        .signature {
-            margin-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            text-align: center;
-        }
+/* SIGNATURE */
+.signature {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 12px;
+}
 
-        .signature div {
-            width: 45%;
-        }
+/* FOOTER */
+.footer {
+    margin-top: 15px;
+    font-size: 12px;
+}
 
-        /* BUTTONS */
-        button {
-            margin-top: 10px;
-            padding: 8px 12px;
-            font-size: 12px;
-            cursor: pointer;
-            border: none;
-            background: #c40000;
-            color: white;
-        }
+/* BUTTONS */
+.buttons {
+    margin-top: 15px;
+    text-align: center;
+}
 
-        button:hover {
-            background: #900000;
-        }
+button {
+    padding: 6px 12px;
+    font-size: 12px;
+}
 
-        .no-print {}
+/* HIDE BUTTONS IN PDF */
+@media print {
+    .buttons {
+        display: none;
+    }
+}
+</style>
 
-    </style>
 </head>
 
 <body>
 
-<div class="container" id="pdfContent">
+<div class="container" id="pdf">
 
-    <h1>INDU ELEVATORS</h1>
-    <h3>LIFT MATERIALS QUOTATION</h3>
+<h1>INDU ELEVATORS</h1>
+<h3>LIFT MATERIALS</h3>
 
-    <!-- CUSTOMER -->
-    <div class="info">
-        <div><b>Customer Name:</b> <span contenteditable="true"></span></div>
-        <div><b>Date:</b> <span contenteditable="true"></span></div>
-    </div>
+<div class="details">
+    CUSTOMER NAME: <input id="customerName"><br><br>
+    DATE: <input id="date">
+</div>
 
-    <!-- TITLE -->
-    <div class="title">
-        AUTO FULL VISION GLASS DOORS (G+<span contenteditable="true">2</span>) (TRACTION LIFT)
-    </div>
+<div class="project-title">
+    AUTO FULL VISION GLASS DOORS (G+<input id="floor" value="2">) (Traction Lift)
+</div>
 
-    <!-- TABLE -->
-    <table id="dataTable">
-        <tr><td class="label">MOTOR</td><td contenteditable="true"></td></tr>
-        <tr><td class="label">DOORS</td><td contenteditable="true"></td></tr>
-        <tr><td class="label">ROPES</td><td contenteditable="true"></td></tr>
-        <tr><td class="label">ENTRANCE DOOR FRAMES</td><td contenteditable="true"></td></tr>
-        <tr><td class="label">CABIN</td><td contenteditable="true"></td></tr>
-        <tr><td class="label">CONTROL</td><td contenteditable="true"></td></tr>
-        <tr><td class="label">LOP AND COP</td><td contenteditable="true"></td></tr>
-        <tr><td class="label">DRIVE</td><td contenteditable="true"></td></tr>
-        <tr><td class="label">TRAVELLING CABLE</td><td contenteditable="true"></td></tr>
-        <tr><td class="label">GATE LOCKS</td><td contenteditable="true"></td></tr>
-        <tr><td class="label">ARD POWER BACKUP</td><td contenteditable="true"></td></tr>
-        <tr><td class="label">GUIDE RAILS</td><td contenteditable="true"></td></tr>
-        <tr><td class="label">LIMIT SWITCHES</td><td contenteditable="true"></td></tr>
-        <tr><td class="label">SENSORS</td><td contenteditable="true"></td></tr>
-    </table>
+<table id="dataTable">
 
-    <!-- BUTTONS -->
-    <button class="no-print" onclick="addRow()">Add Row</button>
-    <button class="no-print" onclick="downloadPDF()">Download PDF</button>
+<tr><td class="label">MOTOR</td><td><input class="table-input" value="MOUNTENARY 5HP"></td></tr>
+<tr><td class="label">DOORS</td><td><input class="table-input" value="SS304 FULL VISION GLASS DOORS"></td></tr>
+<tr><td class="label">ROPES</td><td><input class="table-input" value="USHA MARTIN (13mm)"></td></tr>
+<tr><td class="label">ENTRANCE DOOR FRAMES</td><td><input class="table-input" value="SS304 GRADE"></td></tr>
+<tr><td class="label">CABIN</td><td><input class="table-input" value="S.S CABIN Steel Stain"></td></tr>
+<tr><td class="label">CONTROL</td><td><input class="table-input" value="VICO"></td></tr>
+<tr><td class="label">LOP AND COP</td><td><input class="table-input" value="NEXON"></td></tr>
+<tr><td class="label">DRIVE</td><td><input class="table-input" value="FUJI V3F DRIVE"></td></tr>
+<tr><td class="label">TRAVELLING CABLE</td><td><input class="table-input" value="MICROTHERM FLAT CABLE(0.5mm)"></td></tr>
+<tr><td class="label">GATE LOCKS</td><td><input class="table-input" value="HMT GATE LOCKS"></td></tr>
+<tr><td class="label">ARD POWER BACKUP</td><td><input class="table-input" value="BATTERY’S EXID"></td></tr>
+<tr><td class="label">GUIDE RAILS</td><td><input class="table-input" value="CAR RAIL 10mm, COUNTER RAIL 5mm"></td></tr>
+<tr><td class="label">LIMIT SWITCHES</td><td><input class="table-input" value="THAIWAN SWITCHES"></td></tr>
+<tr><td class="label">SENSORS</td><td><input class="table-input" value="NC and NOC"></td></tr>
 
-    <!-- PRICE -->
-    <div class="price">
-        THE TOTAL PRICE IS RS <span contenteditable="true">10,50,000</span> /-
-    </div>
+</table>
 
-    <!-- DETAILS -->
-    <div class="section">
-        <b>PAYMENT DETAILS:</b><br>
-        1. 50% 1st part material<br>
-        2. 45% 2nd part material<br>
-        3. 5% after completion
-    </div>
+<div class="price">
+    THE PRICE OF THE ABOVE MENTIONED LIST IS RS 
+    <input id="price" value="10,50,000"> /- 
+    (This price includes glass fitting and structure)
+</div>
 
-    <div class="section">
-        <b>WARRANTY PERIOD:</b><br>
-        One year material warranty as well as service
-        (we are not responsible for short circuit or damage)
-    </div>
+<div class="signature">
+    <div>CUSTOMER ACCEPTANCE SIGNATURE</div>
+    <div>AUTHORIZED SIGNATURE</div>
+</div>
 
-    <div class="section">
-        <b>Customer Support:</b><br>
-        1. Civil work<br>
-        2. 3 phase electrical work and earthing<br>
-        3. Scaffolding and chipping
-    </div>
+<div class="footer">
+<b>PAYMENT DETAILS:</b><br>
+1. 50% 1st part material<br>
+2. 45% 2nd part material<br>
+3. 5% after completion<br><br>
 
-    <!-- SIGNATURE -->
-    <div class="signature">
-        <div>CUSTOMER SIGNATURE</div>
-        <div>AUTHORIZED SIGNATURE</div>
-    </div>
+<b>WARRANTY PERIOD:</b><br>
+One year material warranty as well as service 
+(we are not responsible for short circuit or damage)<br><br>
+
+<b>Customer Support:</b><br>
+1. Civil work.<br>
+2. 3 phase electrical work and earthing (ground floor to machine room).<br>
+3. Scaffolding and chipping.
+</div>
+
+<div class="buttons">
+    <button onclick="addRow()">Add Row</button>
+    <button onclick="downloadPDF()">Download PDF</button>
+</div>
 
 </div>
 
-<!-- LIB -->
+<!-- PDF SCRIPT -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
+
 function addRow() {
     let table = document.getElementById("dataTable");
     let row = table.insertRow();
-
-    let cell1 = row.insertCell(0);
-    let cell2 = row.insertCell(1);
-
-    cell1.innerHTML = '<span contenteditable="true">NEW FIELD</span>';
-    cell2.innerHTML = '<span contenteditable="true"></span>';
+    row.innerHTML = `
+        <td class="label"><input class="table-input" placeholder="New Key"></td>
+        <td><input class="table-input" placeholder="New Value"></td>
+    `;
 }
 
 function downloadPDF() {
-    let buttons = document.querySelectorAll(".no-print");
+    let element = document.getElementById("pdf");
 
-    buttons.forEach(btn => btn.style.display = "none");
-
-    const element = document.getElementById("pdfContent");
-
-    html2pdf().from(element).save("Indu_Elevators_Quote.pdf").then(() => {
-        buttons.forEach(btn => btn.style.display = "inline-block");
-    });
+    html2pdf().set({
+        margin: 5,
+        filename: "INDU_ELEVATORS.pdf",
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    }).from(element).save();
 }
+
 </script>
 
 </body>
