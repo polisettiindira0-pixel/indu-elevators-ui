@@ -52,11 +52,6 @@
             width: 45%;
         }
 
-        .editable {
-            width: 100%;
-            min-height: 16px;
-        }
-
         .section {
             margin-top: 10px;
             font-size: 11px;
@@ -67,18 +62,22 @@
             border: none;
         }
 
-        button {
-            margin-top: 10px;
-            padding: 6px 10px;
-            font-size: 11px;
-        }
-
         .center-text {
             text-align: center;
             font-weight: bold;
             margin-top: 5px;
         }
 
+        button {
+            margin-top: 10px;
+            padding: 6px 10px;
+            font-size: 11px;
+        }
+
+        /* HIDE IN PDF */
+        .no-print {
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -97,7 +96,6 @@
         <div contenteditable="true" id="date"></div>
     </div>
 
-    <!-- TITLE ABOVE TABLE -->
     <div class="center-text">
         AUTO FULL VISION GLASS DOORS (G+<span contenteditable="true">2</span>) (Traction Lift)
     </div>
@@ -119,17 +117,18 @@
         <tr><td class="label">SENSORS</td><td contenteditable="true"></td></tr>
     </table>
 
-    <!-- ADD ROW BUTTON -->
-    <button onclick="addRow()">Add Row</button>
+    <!-- BUTTONS -->
+    <button class="no-print" onclick="addRow()">Add Row</button>
+    <button class="no-print" onclick="downloadPDF()">Download PDF</button>
 
     <!-- PRICE LINE -->
     <div class="section">
         THE PRICE OF THE ABOVE MENTIONED LIST IS RS
-        <span contenteditable="true" id="price">1000000</span> /-
+        <span contenteditable="true">1000000</span> /-
         (This price includes glass fitting and structure)
     </div>
 
-    <!-- SIGNATURE (NO BORDER) -->
+    <!-- SIGNATURE -->
     <table class="signature-table">
         <tr>
             <td>CUSTOMER ACCEPTANCE SIGNATURE</td>
@@ -153,11 +152,9 @@
         3. Scaffolding and chipping.
     </div>
 
-    <button onclick="downloadPDF()">Download PDF</button>
-
 </div>
 
-<!-- LIBRARY -->
+<!-- LIB -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
@@ -174,9 +171,18 @@ function addRow() {
 }
 
 function downloadPDF() {
+
+    let buttons = document.querySelectorAll(".no-print");
+
+    // hide buttons
+    buttons.forEach(btn => btn.style.display = "none");
+
     const element = document.getElementById("pdfContent");
 
-    html2pdf().from(element).save("Indu_Elevators.pdf");
+    html2pdf().from(element).save("Indu_Elevators.pdf").then(() => {
+        // show again
+        buttons.forEach(btn => btn.style.display = "inline-block");
+    });
 }
 
 </script>
