@@ -1,227 +1,220 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Indu Elevators Quote</title>
+    <title>Indu Elevators Quote</title>
 
-<style>
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f5f5f5;
-    margin: 0;
-}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* ✅ A4 PERFECT SIZE */
-.container {
-    width: 210mm;
-    min-height: 297mm;
-    margin: 10px auto;
-    background: #fff;
-    padding: 20px;
-    box-sizing: border-box;
-}
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f5f5;
+        }
 
-/* HEADER */
-h1 {
-    text-align: center;
-    color: #c40000;
-    font-size: 22px;
-    margin-bottom: 2px;
-}
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 15px;
+            box-sizing: border-box;
+        }
 
-h3 {
-    text-align: center;
-    font-size: 13px;
-    margin-bottom: 15px;
-}
+        h1 {
+            text-align: center;
+            color: #c40000;
+            font-size: 20px;
+            margin-bottom: 2px;
+        }
 
-/* INFO */
-.info {
-    font-size: 13px;
-    margin-bottom: 10px;
-}
+        h3 {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
 
-/* TITLE */
-.title {
-    text-align: center;
-    font-weight: bold;
-    font-size: 14px;
-    margin: 10px 0;
-}
+        .info {
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
 
-/* TABLE */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-}
+        .info div {
+            margin-bottom: 5px;
+        }
 
-td {
-    border: 1px solid #000;
-    padding: 6px;
-}
+        .title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 13px;
+            margin: 8px 0;
+        }
 
-.label {
-    font-weight: bold;
-    background: #f2f2f2;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
 
-/* PRICE */
-.price {
-    margin-top: 12px;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-}
+        td {
+            border: 1px solid #000;
+            padding: 5px;
+        }
 
-/* SECTIONS */
-.section {
-    margin-top: 15px;
-    font-size: 12px;
-}
+        .label {
+            font-weight: bold;
+            background: #f2f2f2;
+            width: 45%;
+        }
 
-/* SIGN */
-.signature {
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-}
+        .price {
+            margin-top: 10px;
+            font-size: 13px;
+            font-weight: bold;
+            text-align: center;
+        }
 
-/* BUTTONS */
-button {
-    margin-top: 10px;
-    padding: 8px 12px;
-    background: #c40000;
-    color: white;
-    border: none;
-}
+        .section {
+            margin-top: 12px;
+            font-size: 12px;
+        }
 
-/* HIDE IN PDF */
-.no-print {
-    text-align: center;
-}
+        .signature {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            text-align: center;
+        }
 
-/* PRINT FIX */
-@media print {
-    body {
-        background: white;
-    }
+        .signature div {
+            width: 45%;
+        }
 
-    .container {
-        margin: 0;
-        box-shadow: none;
-    }
+        button {
+            margin-top: 10px;
+            padding: 8px 12px;
+            font-size: 12px;
+            cursor: pointer;
+            border: none;
+            background: #c40000;
+            color: white;
+        }
 
-    .no-print {
-        display: none;
-    }
-}
-</style>
+        /* 🔥 Hide buttons in PDF */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <div class="container" id="pdfContent">
 
-<h1>INDU ELEVATORS</h1>
-<h3>LIFT MATERIALS QUOTATION</h3>
+    <h1>INDU ELEVATORS</h1>
+    <h3>LIFT MATERIALS QUOTATION</h3>
 
-<div class="info">
-    <div><b>Customer Name:</b> <span contenteditable="true">Indira Polisetti</span></div>
-    <div><b>Date:</b> <span contenteditable="true">12/04/2026</span></div>
-</div>
+    <!-- CUSTOMER -->
+    <div class="info">
+        <div><b>Customer Name:</b> <span contenteditable="true">Indira Polisetti</span></div>
+        <div><b>Date:</b> <span id="dateField" contenteditable="true"></span></div>
+    </div>
 
-<div class="title">
-    AUTO FULL VISION GLASS DOORS (G+<span contenteditable="true">2</span>) (TRACTION LIFT)
-</div>
+    <!-- TITLE -->
+    <div class="title">
+        AUTO FULL VISION GLASS DOORS (G+<span contenteditable="true">2</span>) (TRACTION LIFT)
+    </div>
 
-<table id="dataTable">
-<tr><td class="label">MOTOR</td><td contenteditable="true">MOUNTENARY 5HP</td></tr>
-<tr><td class="label">DOORS</td><td contenteditable="true">SS304 FULL VISION GLASS DOORS</td></tr>
-<tr><td class="label">ROPES</td><td contenteditable="true">USHA MARTIN (13mm)</td></tr>
-<tr><td class="label">ENTRANCE DOOR FRAMES</td><td contenteditable="true">SS304 GRADE</td></tr>
-<tr><td class="label">CABIN</td><td contenteditable="true">S.S CABIN Steel Stain</td></tr>
-<tr><td class="label">CONTROL</td><td contenteditable="true">VICO</td></tr>
-<tr><td class="label">LOP AND COP</td><td contenteditable="true">NEXON</td></tr>
-<tr><td class="label">DRIVE</td><td contenteditable="true">FUJI V3F DRIVE</td></tr>
-<tr><td class="label">TRAVELLING CABLE</td><td contenteditable="true">MICROTHERM FLAT CABLE (0.5mm)</td></tr>
-<tr><td class="label">GATE LOCKS</td><td contenteditable="true">HMT GATE LOCKS</td></tr>
-<tr><td class="label">ARD POWER BACKUP</td><td contenteditable="true">BATTERY'S EXIDE</td></tr>
-<tr><td class="label">GUIDE RAILS</td><td contenteditable="true">CAR RAIL 10mm, COUNTER RAIL 5mm</td></tr>
-<tr><td class="label">LIMIT SWITCHES</td><td contenteditable="true">THAIWAN SWITCHES</td></tr>
-<tr><td class="label">SENSORS</td><td contenteditable="true">NC and NOC</td></tr>
-</table>
+    <!-- TABLE -->
+    <table id="dataTable">
+        <tr><td class="label">MOTOR</td><td contenteditable="true">MOUNTENARY 5HP</td></tr>
+        <tr><td class="label">DOORS</td><td contenteditable="true">SS304 FULL VISION GLASS DOORS</td></tr>
+        <tr><td class="label">ROPES</td><td contenteditable="true">USHA MARTIN (13mm)</td></tr>
+        <tr><td class="label">ENTRANCE DOOR FRAMES</td><td contenteditable="true">SS304 GRADE</td></tr>
+        <tr><td class="label">CABIN</td><td contenteditable="true">S.S CABIN Steel Stain</td></tr>
+        <tr><td class="label">CONTROL</td><td contenteditable="true">VICO</td></tr>
+        <tr><td class="label">LOP AND COP</td><td contenteditable="true">NEXON</td></tr>
+        <tr><td class="label">DRIVE</td><td contenteditable="true">FUJI V3F DRIVE</td></tr>
+        <tr><td class="label">TRAVELLING CABLE</td><td contenteditable="true">MICROTHERM FLAT CABLE (0.5mm)</td></tr>
+        <tr><td class="label">GATE LOCKS</td><td contenteditable="true">HMT GATE LOCKS</td></tr>
+        <tr><td class="label">ARD POWER BACKUP</td><td contenteditable="true">BATTERY'S EXID</td></tr>
+        <tr><td class="label">GUIDE RAILS</td><td contenteditable="true">CAR RAIL 10mm, COUNTER RAIL 5mm</td></tr>
+        <tr><td class="label">LIMIT SWITCHES</td><td contenteditable="true">THAIWAN SWITCHES</td></tr>
+        <tr><td class="label">SENSORS</td><td contenteditable="true">NC and NOC</td></tr>
+    </table>
 
-<div class="price">
-    THE TOTAL PRICE IS RS <span contenteditable="true">10,50,000</span> /-
-</div>
+    <!-- BUTTONS -->
+    <button class="no-print" onclick="addRow()">Add Row</button>
+    <button class="no-print" onclick="downloadPDF()">Download PDF</button>
 
-<div class="section">
-<b>PAYMENT DETAILS:</b><br>
-1. 50% 1st part material<br>
-2. 45% 2nd part material<br>
-3. 5% after completion
-</div>
+    <!-- PRICE -->
+    <div class="price">
+        THE TOTAL PRICE IS RS <span contenteditable="true">10,50,000</span> /-
+    </div>
 
-<div class="section">
-<b>WARRANTY PERIOD:</b><br>
-One year material warranty as well as service
-</div>
+    <!-- DETAILS -->
+    <div class="section">
+        <b>PAYMENT DETAILS:</b><br>
+        1. 50% 1st part material<br>
+        2. 45% 2nd part material<br>
+        3. 5% after completion
+    </div>
 
-<div class="section">
-<b>Customer Support:</b><br>
-1. Civil work<br>
-2. 3 phase electrical work and earthing<br>
-3. Scaffolding and chipping
-</div>
+    <div class="section">
+        <b>WARRANTY PERIOD:</b><br>
+        One year material warranty as well as service
+        (we are not responsible for short circuit or damage)
+    </div>
 
-<div class="signature">
-<div>CUSTOMER SIGNATURE</div>
-<div>AUTHORIZED SIGNATURE</div>
-</div>
+    <div class="section">
+        <b>Customer Support:</b><br>
+        1. Civil work<br>
+        2. 3 phase electrical work and earthing<br>
+        3. Scaffolding and chipping
+    </div>
 
-<div class="no-print">
-<button onclick="addRow()">Add Row</button>
-<button onclick="downloadPDF()">Download PDF</button>
-</div>
+    <!-- SIGNATURE -->
+    <div class="signature">
+        <div>CUSTOMER SIGNATURE</div>
+        <div>AUTHORIZED SIGNATURE</div>
+    </div>
 
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
+/* ✅ AUTO DATE (today) */
+window.onload = function() {
+    let today = new Date();
+    let formatted = today.toLocaleDateString('en-GB'); // DD/MM/YYYY
+    document.getElementById("dateField").innerText = formatted;
+};
+
 function addRow() {
     let table = document.getElementById("dataTable");
     let row = table.insertRow();
 
-    row.innerHTML = `
-        <td contenteditable="true">NEW FIELD</td>
-        <td contenteditable="true"></td>
-    `;
+    let cell1 = row.insertCell(0);
+    let cell2 = row.insertCell(1);
+
+    cell1.innerHTML = '<span contenteditable="true">NEW FIELD</span>';
+    cell2.innerHTML = '<span contenteditable="true"></span>';
 }
 
 function downloadPDF() {
-
     const element = document.getElementById("pdfContent");
 
-    const opt = {
-        margin: 0,
-        filename: "Indu_Elevators_Quote.pdf",
+    html2pdf().set({
+        margin: 5,
+        filename: 'Indu_Elevators_Quote.pdf',
         image: { type: 'jpeg', quality: 1 },
-        html2canvas: {
-            scale: 2,
-            useCORS: true,
-            scrollX: 0,
-            scrollY: 0
-        },
-        jsPDF: {
-            unit: 'mm',
-            format: 'a4',
-            orientation: 'portrait'
-        }
-    };
-
-    html2pdf().set(opt).from(element).save();
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    }).from(element).save();
 }
 </script>
 
