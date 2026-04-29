@@ -1,49 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Indu Elevators</title>
+    <title>Indu Elevators Quote</title>
 
     <style>
         body {
-            font-family: Arial;
-            background: #eaeaea;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f5f5;
         }
 
         .container {
-            width: 650px;
+            width: 700px;
             margin: 20px auto;
-            background: white;
-            padding: 20px;
+            background: #fff;
+            padding: 25px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
+        /* HEADER */
         h1 {
             text-align: center;
-            color: red;
-            font-size: 16px;
-            margin: 0;
+            color: #c40000;
+            font-size: 22px;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
         }
 
         h3 {
             text-align: center;
-            font-size: 12px;
-            margin: 0;
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #333;
         }
 
-        .small {
-            font-size: 11px;
-            margin-top: 10px;
+        /* CUSTOMER INFO */
+        .info {
+            font-size: 13px;
+            margin-bottom: 10px;
         }
 
+        .info div {
+            margin-bottom: 5px;
+        }
+
+        /* TITLE */
+        .title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        /* TABLE */
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 11px;
-            margin-top: 5px;
+            font-size: 13px;
         }
 
         td {
-            border: 1px solid black;
-            padding: 4px;
+            border: 1px solid #333;
+            padding: 6px;
         }
 
         .label {
@@ -52,32 +71,60 @@
             width: 45%;
         }
 
-        .section {
-            margin-top: 10px;
-            font-size: 11px;
-        }
-
-        .signature-table td {
-            height: 50px;
-            border: none;
-        }
-
-        .center-text {
-            text-align: center;
+        /* PRICE */
+        .price {
+            margin-top: 12px;
+            font-size: 14px;
             font-weight: bold;
-            margin-top: 5px;
+            text-align: center;
         }
 
+        .price span {
+            font-size: 18px;
+            color: #000;
+        }
+
+        /* SECTIONS */
+        .section {
+            margin-top: 15px;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .section b {
+            font-size: 13px;
+        }
+
+        /* SIGNATURE */
+        .signature {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .signature div {
+            width: 45%;
+        }
+
+        /* BUTTONS */
         button {
             margin-top: 10px;
-            padding: 6px 10px;
-            font-size: 11px;
+            padding: 8px 12px;
+            font-size: 12px;
+            cursor: pointer;
+            border: none;
+            background: #c40000;
+            color: white;
         }
 
-        /* HIDE IN PDF */
-        .no-print {
-            display: inline-block;
+        button:hover {
+            background: #900000;
         }
+
+        .no-print {}
+
     </style>
 </head>
 
@@ -86,20 +133,20 @@
 <div class="container" id="pdfContent">
 
     <h1>INDU ELEVATORS</h1>
-    <h3>LIFT MATERIALS</h3>
+    <h3>LIFT MATERIALS QUOTATION</h3>
 
-    <div class="small">
-        CUSTOMER NAME:<br>
-        <div contenteditable="true" id="customerName"></div>
-
-        DATE:<br>
-        <div contenteditable="true" id="date"></div>
+    <!-- CUSTOMER -->
+    <div class="info">
+        <div><b>Customer Name:</b> <span contenteditable="true"></span></div>
+        <div><b>Date:</b> <span contenteditable="true"></span></div>
     </div>
 
-    <div class="center-text">
-        AUTO FULL VISION GLASS DOORS (G+<span contenteditable="true">2</span>) (Traction Lift)
+    <!-- TITLE -->
+    <div class="title">
+        AUTO FULL VISION GLASS DOORS (G+<span contenteditable="true">2</span>) (TRACTION LIFT)
     </div>
 
+    <!-- TABLE -->
     <table id="dataTable">
         <tr><td class="label">MOTOR</td><td contenteditable="true"></td></tr>
         <tr><td class="label">DOORS</td><td contenteditable="true"></td></tr>
@@ -121,35 +168,36 @@
     <button class="no-print" onclick="addRow()">Add Row</button>
     <button class="no-print" onclick="downloadPDF()">Download PDF</button>
 
-    <!-- PRICE LINE -->
-    <div class="section">
-        THE PRICE OF THE ABOVE MENTIONED LIST IS RS
-        <span contenteditable="true">1000000</span> /-
-        (This price includes glass fitting and structure)
+    <!-- PRICE -->
+    <div class="price">
+        THE TOTAL PRICE IS RS <span contenteditable="true">10,50,000</span> /-
     </div>
 
-    <!-- SIGNATURE -->
-    <table class="signature-table">
-        <tr>
-            <td>CUSTOMER ACCEPTANCE SIGNATURE</td>
-            <td>AUTHORIZED SIGNATURE</td>
-        </tr>
-    </table>
-
+    <!-- DETAILS -->
     <div class="section">
         <b>PAYMENT DETAILS:</b><br>
         1. 50% 1st part material<br>
         2. 45% 2nd part material<br>
-        3. 5% after completion<br><br>
+        3. 5% after completion
+    </div>
 
+    <div class="section">
         <b>WARRANTY PERIOD:</b><br>
         One year material warranty as well as service
-        (we are not responsible for short circuit or damage)<br><br>
+        (we are not responsible for short circuit or damage)
+    </div>
 
+    <div class="section">
         <b>Customer Support:</b><br>
-        1. Civil work.<br>
-        2. 3 phase electrical work and earthing (ground floor to machine room).<br>
-        3. Scaffolding and chipping.
+        1. Civil work<br>
+        2. 3 phase electrical work and earthing<br>
+        3. Scaffolding and chipping
+    </div>
+
+    <!-- SIGNATURE -->
+    <div class="signature">
+        <div>CUSTOMER SIGNATURE</div>
+        <div>AUTHORIZED SIGNATURE</div>
     </div>
 
 </div>
@@ -158,7 +206,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
-
 function addRow() {
     let table = document.getElementById("dataTable");
     let row = table.insertRow();
@@ -171,20 +218,16 @@ function addRow() {
 }
 
 function downloadPDF() {
-
     let buttons = document.querySelectorAll(".no-print");
 
-    // hide buttons
     buttons.forEach(btn => btn.style.display = "none");
 
     const element = document.getElementById("pdfContent");
 
-    html2pdf().from(element).save("Indu_Elevators.pdf").then(() => {
-        // show again
+    html2pdf().from(element).save("Indu_Elevators_Quote.pdf").then(() => {
         buttons.forEach(btn => btn.style.display = "inline-block");
     });
 }
-
 </script>
 
 </body>
