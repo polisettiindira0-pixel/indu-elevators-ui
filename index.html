@@ -1,179 +1,143 @@
 <!DOCTYPE html>
-
 <html>
 <head>
     <title>Indu Elevators</title>
 
     <style>
-body {
-    font-family: Arial;
-    background: #eaeaea;
-}
+        body {
+            font-family: Arial;
+            background: #eaeaea;
+        }
 
-.container {
-    width: 620px;
-    margin: 30px auto;
-    background: white;
-    padding: 20px 30px;
-}
+        .container {
+            width: 650px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+        }
 
-/* HEADINGS */
-h1 {
-    text-align: center;
-    color: red;
-    font-size: 16px;
-    margin: 0;
-}
+        h1 {
+            text-align: center;
+            color: red;
+            font-size: 16px;
+            margin: 0;
+        }
 
-h3 {
-    text-align: center;
-    font-size: 12px;
-    margin: 0 0 6px 0;
-}
+        h3 {
+            text-align: center;
+            font-size: 12px;
+            margin: 0;
+        }
 
-/* NAME + DATE */
-.top-info {
-    font-size: 11px;
-    margin-bottom: 4px;
-}
+        .small {
+            font-size: 11px;
+            margin-top: 10px;
+        }
 
-/* TABLE */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 11px;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+            margin-top: 5px;
+        }
 
-td {
-    border: 1px solid black;
-    padding: 4px;
-}
+        td {
+            border: 1px solid black;
+            padding: 4px;
+        }
 
-.label {
-    font-weight: bold;
-    background: #f2f2f2;
-    width: 45%;
-}
+        .label {
+            font-weight: bold;
+            background: #f2f2f2;
+            width: 45%;
+        }
 
-/* EDITABLE TEXT */
-.editable {
-    display: inline-block;
-    min-width: 50px;
-    outline: none;
-}
+        .editable {
+            width: 100%;
+            min-height: 16px;
+        }
 
-/* TITLE ABOVE TABLE */
-.doors-title {
-    text-align: center;
-    font-size: 12px;
-    margin: 2px 0;
-}
+        .section {
+            margin-top: 10px;
+            font-size: 11px;
+        }
 
-/* SECTION */
-.section {
-    margin-top: 6px;
-    font-size: 11px;
-}
+        .signature-table td {
+            height: 50px;
+            border: none;
+        }
 
-/* SIGNATURE (NO LINES) */
-.signature-table td {
-    height: 60px;
-    text-align: center;
-    vertical-align: bottom;
-    border: none;
-    font-size: 10px;
-}
+        button {
+            margin-top: 10px;
+            padding: 6px 10px;
+            font-size: 11px;
+        }
 
-/* FOOTER */
-.footer {
-    margin-top: 8px;
-    font-size: 11px;
-}
+        .center-text {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 5px;
+        }
 
-/* BUTTON */
-button {
-    margin-top: 10px;
-}
-
-/* PRINT */
-@media print {
-    button {
-        display: none;
-    }
-    body {
-        background: white;
-    }
-}
-</style>
-
+    </style>
 </head>
 
 <body>
 
-<div class="container" id="pdfArea">
+<div class="container" id="pdfContent">
 
     <h1>INDU ELEVATORS</h1>
     <h3>LIFT MATERIALS</h3>
 
-    <!-- NAME + DATE -->
+    <div class="small">
+        CUSTOMER NAME:<br>
+        <div contenteditable="true" id="customerName"></div>
 
-    <div class="top-info">
-        CUSTOMER NAME: <span contenteditable="true" id="customerName" class="editable"></span><br>
-        DATE: <span contenteditable="true" id="date" class="editable"></span>
+        DATE:<br>
+        <div contenteditable="true" id="date"></div>
     </div>
 
-    <!-- TITLE -->
-
-    <div class="doors-title">
-        AUTO FULL VISION GLASS DOORS
-        (<span contenteditable="true" id="doorsFloors">G+2</span>)
-        (Traction Lift)
+    <!-- TITLE ABOVE TABLE -->
+    <div class="center-text">
+        AUTO FULL VISION GLASS DOORS (G+<span contenteditable="true">2</span>) (Traction Lift)
     </div>
 
-    <table>
-        <tr><td class="label">MOTOR</td><td contenteditable="true" id="motor"></td></tr>
-        <tr><td class="label">ROPES</td><td contenteditable="true" id="ropes"></td></tr>
-        <tr><td class="label">ENTRANCE DOOR FRAMES</td><td contenteditable="true" id="entranceDoorFrames"></td></tr>
-        <tr><td class="label">CABIN</td><td contenteditable="true" id="cabin"></td></tr>
-        <tr><td class="label">CONTROL</td><td contenteditable="true" id="control"></td></tr>
-        <tr><td class="label">LOP AND COP</td><td contenteditable="true" id="lopAndCop"></td></tr>
-        <tr><td class="label">DRIVE</td><td contenteditable="true" id="drive"></td></tr>
-        <tr><td class="label">TRAVELLING CABLE</td><td contenteditable="true" id="travellingCable"></td></tr>
-        <tr><td class="label">GATE LOCKS</td><td contenteditable="true" id="gateLocks"></td></tr>
-        <tr><td class="label">ARD POWER BACKUP</td><td contenteditable="true" id="ardPowerBackup"></td></tr>
-        <tr><td class="label">GUIDE RAILS</td><td contenteditable="true" id="guideRails"></td></tr>
-        <tr><td class="label">LIMIT SWITCHES</td><td contenteditable="true" id="limitSwitches"></td></tr>
-        <tr><td class="label">SENSORS</td><td contenteditable="true" id="sensors"></td></tr>
+    <table id="dataTable">
+        <tr><td class="label">MOTOR</td><td contenteditable="true"></td></tr>
+        <tr><td class="label">DOORS</td><td contenteditable="true"></td></tr>
+        <tr><td class="label">ROPES</td><td contenteditable="true"></td></tr>
+        <tr><td class="label">ENTRANCE DOOR FRAMES</td><td contenteditable="true"></td></tr>
+        <tr><td class="label">CABIN</td><td contenteditable="true"></td></tr>
+        <tr><td class="label">CONTROL</td><td contenteditable="true"></td></tr>
+        <tr><td class="label">LOP AND COP</td><td contenteditable="true"></td></tr>
+        <tr><td class="label">DRIVE</td><td contenteditable="true"></td></tr>
+        <tr><td class="label">TRAVELLING CABLE</td><td contenteditable="true"></td></tr>
+        <tr><td class="label">GATE LOCKS</td><td contenteditable="true"></td></tr>
+        <tr><td class="label">ARD POWER BACKUP</td><td contenteditable="true"></td></tr>
+        <tr><td class="label">GUIDE RAILS</td><td contenteditable="true"></td></tr>
+        <tr><td class="label">LIMIT SWITCHES</td><td contenteditable="true"></td></tr>
+        <tr><td class="label">SENSORS</td><td contenteditable="true"></td></tr>
     </table>
 
-    <!-- PRICE -->
+    <!-- ADD ROW BUTTON -->
+    <button onclick="addRow()">Add Row</button>
 
+    <!-- PRICE LINE -->
     <div class="section">
         THE PRICE OF THE ABOVE MENTIONED LIST IS RS
-        <span contenteditable="true" id="priceText" oninput="formatPrice(this)"></span> /-
+        <span contenteditable="true" id="price">1000000</span> /-
         (This price includes glass fitting and structure)
     </div>
 
-    <!-- SIGNATURE (NO LINE, ONLY SPACE) -->
+    <!-- SIGNATURE (NO BORDER) -->
+    <table class="signature-table">
+        <tr>
+            <td>CUSTOMER ACCEPTANCE SIGNATURE</td>
+            <td>AUTHORIZED SIGNATURE</td>
+        </tr>
+    </table>
 
     <div class="section">
-        <table class="signature-table">
-            <tr>
-                <td>
-                    <div style="height:40px;"></div>
-                    CUSTOMER ACCEPTANCE SIGNATURE
-                </td>
-                <td>
-                    <div style="height:40px;"></div>
-                    AUTHORIZED SIGNATURE
-                </td>
-            </tr>
-        </table>
-    </div>
-
-    <!-- FOOTER -->
-
-    <div class="footer">
         <b>PAYMENT DETAILS:</b><br>
         1. 50% 1st part material<br>
         2. 45% 2nd part material<br>
@@ -184,35 +148,35 @@ button {
         (we are not responsible for short circuit or damage)<br><br>
 
         <b>Customer Support:</b><br>
-
         1. Civil work.<br>
-        2. 3 phase electrical work and earthing.<br>
+        2. 3 phase electrical work and earthing (ground floor to machine room).<br>
         3. Scaffolding and chipping.
-
     </div>
+
+    <button onclick="downloadPDF()">Download PDF</button>
 
 </div>
 
-<button onclick="downloadPDF()">Download PDF</button>
+<!-- LIBRARY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
 
-function formatPrice(el) {
-    let val = el.innerText.replace(/,/g, '').replace(/\D/g,'');
-    if (!val) return;
+function addRow() {
+    let table = document.getElementById("dataTable");
+    let row = table.insertRow();
 
-    let last3 = val.slice(-3);
-    let other = val.slice(0, -3);
+    let cell1 = row.insertCell(0);
+    let cell2 = row.insertCell(1);
 
-    if (other !== '') {
-        last3 = ',' + last3;
-    }
-
-    el.innerText = other.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + last3;
+    cell1.innerHTML = '<span contenteditable="true">NEW FIELD</span>';
+    cell2.innerHTML = '<span contenteditable="true"></span>';
 }
 
 function downloadPDF() {
-    window.print();
+    const element = document.getElementById("pdfContent");
+
+    html2pdf().from(element).save("Indu_Elevators.pdf");
 }
 
 </script>
